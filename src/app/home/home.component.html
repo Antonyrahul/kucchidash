@@ -1,0 +1,186 @@
+<!-- <button (click)="download()"> Download CSV </button>
+<h6>Number stats</h6>
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body addncls">
+     Form visit count : {{formvisitcount}}
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-body addncls" >
+     Site visit count : {{sitevisitcount}}
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-body addncls" >
+     No of people clicked start : {{startvisitcount}}
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-body addncls" >
+     No of submissions : {{userdata.length}}
+    </div>
+  </div>
+
+
+
+  <h6>Data stats</h6>
+
+  <div *ngFor=" let details of userdata" class="card cardadnl" style="margin-top: 20px;">
+    <div *ngFor=" let item of details| keyvalue" class="card-body addncls" >
+     {{item.key}}  : {{item.value}}
+    </div>
+  </div> -->
+
+  <!-- <div class="logoutdiv">
+    <div class="logout_para" (click)="logoutuser();"><p style="margin-top: 10px;" >logout</p>
+    <img style="margin-left: 10px;" src="../../assets/images/logout.svg" alt="">
+    </div>
+        
+  </div> -->
+  <div class="numbersdata_grid">
+    <div class="formvisit numbersdata">
+  
+      <div class="formvisit_title">
+        KUCCHI VISIT 
+      </div>
+      <div class="formvisit_value">
+        {{kucchivisitcount}}
+      </div>
+     
+    </div>
+    <div class="sitevisit numbersdata">
+  
+      <div class="formvisit_title">
+        SITE VISIT 
+      </div>
+      <div class="formvisit_value">
+        {{sitevisitcount}}
+      </div>
+        
+    </div>
+    <div class="startclick numbersdata">
+  
+      <div class="formvisit_title">
+        INFO VISIT 
+      </div>
+      <div class="formvisit_value">
+        {{infovisitcount}}
+      </div>
+      
+    </div>
+    <div class="startclick numbersdata">
+  
+        <div class="formvisit_title">
+          FONT VISIT 
+        </div>
+        <div class="formvisit_value">
+          {{fontvisitcount}}
+        </div>
+        
+      </div>
+    <div class="submissions numbersdata">
+  
+      <div class="formvisit_title">
+        NO OF SUBMISSIONS 
+      </div>
+      <div class="formvisit_value">
+        {{userdata.length}}
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="sortandsearchgrid">
+    <div class="sortandsearchgrid_left">
+      <div class="time">
+        <div class="time_left">
+          Time
+        </div>
+        <div class="time_right">
+          <img class="arrow_img" (click)="sortbytimelowtoup();" src="../../assets/images/sortup.svg" alt="">
+          <img class="arrow_img" (click)="sortbytimeuptolow();" src="../../assets/images/sortdown.svg" alt="">
+        </div>
+      </div>
+    </div>
+  
+    <div class="sortandsearchgrid_right">
+      <div class="exportdiv">
+        <p class="export" (click)=download();> <u>Export to csv</u></p>
+      </div>
+    <div class="searchdiv">
+      <input class="searchinput" type="text" name="" id="" placeholder="search...." (keyup)="search($event.target.value)">
+    </div>
+  
+    
+    </div>
+  
+  </div>
+  
+  <div class="userdetailsmain">
+    <div class="detailsListMain">
+  
+      <div class="seperator">
+        <hr>
+      </div>
+  
+      <div class="nameandemailrow">
+  
+       
+        <div class="chckbox">
+          
+        </div>
+  
+        <div class="dispname dispcommon_head">
+          Date
+        </div>
+        <div class="dispname dispcommon_head">
+          Name
+        </div>
+        <div class="dispemail dispcommon_head">
+          Email
+        </div>
+  
+      </div>
+  
+      <div class="seperator">
+        <hr>
+      </div>
+      
+      <div *ngFor=" let details of displayArr;" class="nameandemail" (click)="showalldata(details)">
+  
+        <div class="nameandemailrow">
+  
+       
+        <div class="chckbox">
+          <input type="checkbox" name="" id="" class="cbox" (click)="toggleanswer(details)">
+        </div>
+        
+        <div class="dispname dispcommon">
+          {{details.date}}
+        </div>
+        <div class="dispname dispcommon">
+          {{details.projname}}
+        </div>
+        <div class="dispemail dispcommon">
+          {{details.email}}
+        </div>
+      </div>
+      <div class="seperator">
+        <hr>
+      </div>
+  
+      </div>
+  
+    </div>
+    <div class="displaydataMain">
+      <div *ngFor=" let item of currentData| keyvalue;let i=index" class="card-body addncls" >
+          
+        <p class="valuepara_key">{{i+1}}.{{item.key}} </p>
+        <p class="valuepara_value">{{item.value}}</p>
+       </div>
+    </div>
+  </div>

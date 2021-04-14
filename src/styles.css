@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Kucchi'; /*a name to be used later*/
+    src: url("assets/fonts/Kucchi-Medium.woff2");
+    font-weight: 400;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Kucchi'; /*a name to be used later*/
+    src: url("assets/fonts/Kucchi-SemiBold.woff2");
+    font-weight: 500;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Kucchi'; /*a name to be used later*/
+    src: url("assets/fonts/Kucchi-Bold.woff2");
+    font-weight: 600;
+    font-display: block;
+}
